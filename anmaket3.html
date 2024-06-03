@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition-property: какие свойства изменять плавно?</title>
+    <style>
+      .btn {
+  background-color: #00e676;
+  color: #ffffff;
+  transition-duration: 1s;
+  transition-property: all;
+  background-image: url('s.png');
+  width: 300px;
+  height: 100px;
+  background-size: cover;
+  margin-left: 30%;
+}
+
+.btn:hover {
+  opacity: 0.8;transform: scale(1.95)
+}
+
+.btn:active {
+  transform: rotate(180deg);
+}
+
+.btn-active {
+  background-color: #ff5252;
+  font-size: 60px;
+  
+}
+.square{width: 300px;
+height: 100px;
+background: yellow;
+transition-duration: 1s, 3s;
+  transition-property: background-color, transform;}
+.square:hover {
+  opacity: 0.5;transform: rotate(180deg);
+}
+
+.square:active {background-color: #ff5252;
+  font-size: 60px;
+  transform: scale(1.95)
+}
+
+
+
+      body{width: 100%; background: floralwhite;}
+      .st{width: 85%;background: lavender; margin: auto;}
+      h1,h2,h3,h4{text-align: center; padding-top: 10px; padding-bottom: 10px;}
+      p{padding-left: 10px;padding-right: 10px;}
+  
+      a{background: palevioletred; padding: 20px;}
+      .a{display: flex;justify-content: space-between;}
+      img{width: 90%;margin-left: 5%;}
+      code{background-color: aliceblue;border: 1px solid lightgrey; border-radius: 5px; padding: 2px; font-size: 100%;}
+      span{border: 1px solid lightgrey; border-radius: 5px; padding: 5px; font-size: 110%;}
+
+      </style>
+</head>
+<body>
+  <div class="st">
+    <h1><code>transition-property</code>: какие свойства изменять плавно?</h1>
+    <p>Такое поведение соответствует значению <code>all</code> свойства <code>transition-property</code>, это значение по умолчанию.</p>
+    <p>Такое поведение часто нежелательно, особенно когда в правиле много свойств.</p>
+    <p>Можно указать, какие именно свойства нужно изменять плавно, перечислив их в <code>transition-property</code> через запятую:</p>
+    <p><code>transition-property: width;     // плавно меняется только ширина</code></p>
+    <p><code>transition-property: width, height; // плавно меняются ширина и высота</code></p>  
+    <p>При этом так же через запятую можно задавать переходам разных свойств разную длительность:</p>
+    <p><code>transition-property: width, height;</code></p>
+    <p><code>transition-duration: 1s, 5s; // ширина меняется за 1 секунду, высота за 5</code></p>
+    <p>Попробуем применить описанное свойство на практике. В этом примере у кнопки анимируются свойства <code>background-color</code>, <code>transform</code> и <code>font-size</code>.</p>   
+
+   <h2>Задачи</h2>
+  <ul>
+    <p>
+      <li>Кнопке <code>.btn</code> задайте плавный переход только для свойства <code>background-color</code></li>
+    </p>
+    <p>
+      <li>потом задайте плавный переход только для свойства <code>transform</code></li>
+    </p>
+    <p>
+      <li>а затем — для обоих свойств одновременно <code>background-color</code>, <code>transform</code></li>
+    </p>
+    <p>
+      <li>Измените длительность перехода для <code>.btn на 1s</code>, <code>3s</code></li>
+    </p>
+    <p>
+      <li>Нажимайте на кнопку <code>.btn</code> в мини-браузере, чтобы переключать у неё класс <code>btn-active</code> и увидеть плавный переход.</li>
+    </p>
+   
+  </ul>
+    <h4>Было</h4>
+   <!-- <h4>object.svg</h4>
+     -->
+    
+    <button class="btn" type="button">&#58880;</button>
+    <p><pre>
+
+    </pre></p>
+    <button class="square"></button>  
+            <h4>Надо</h4>
+            <p>
+                <p><code>.btn {</code></p>
+                <p><code>background-color: #00e676;</code></p>
+                <p><code>color: #ffffff;</code></p>
+                <p><code>transition-duration: 1s, 3s;</code></p>
+                <p><code>transition-property: background-color, transform;</code></p>
+                <p><code>}</code></p>
+                <p><code>.btn-active {</code></p>
+                <p><code>background-color: #ff5252;</code></p>
+                <p><code>font-size: 60px;</code></p>
+                <p><code>transform: rotate(180deg);</code></p>
+                <p><code>}</code></p>
+                
+            </p>
+            
+
+            
+            <h3>Код</h3>
+            <img src="30task.png" alt="">
+            <p><img src="31task.png" alt=""></p>
+   
+   <div>
+        <a href="index.html">На главную</a>
+        
+       </div>
+      </div>
+</body>
+</html>
