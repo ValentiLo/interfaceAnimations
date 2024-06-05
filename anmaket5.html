@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>«Форма» перехода, transition-timing-function</title>
+    <style>
+        /* .im{width: 85%;} */
+      .squares{background: antiquewhite;width: 90%; }
+      .square{width: 100px; height: 100px;background: aqua;margin: 10px;}
+     .square:hover{left: 75%;
+      border-radius: 50%;}
+       
+.square {
+  left: 0;
+}
+.square-experimental {
+  transition-timing-function: linear;
+}
+      body{width: 100%; background: floralwhite;}
+      .st{width: 85%;background: lavender; margin: auto;}
+      h1,h2,h3,h4{text-align: center; padding-top: 10px; padding-bottom: 10px;}
+      p{padding-left: 10px;padding-right: 10px;}
+  
+      a{background: palevioletred; padding: 20px;}
+      .a{display: flex;justify-content: space-between;}
+      /* img{margin-left: 5%;} */
+      code{background-color: aliceblue;border: 1px solid lightgrey; border-radius: 5px; padding: 2px; font-size: 100%;}
+      span{border: 1px solid lightgrey; border-radius: 5px; padding: 5px; font-size: 110%;}
+
+      </style>
+</head>
+<body>
+    <div class="st">
+    <h1>«Форма» перехода, transition-timing-function</h1>
+    <p>Ещё одно свойство, влияющее на переход — transition-timing-function. Это свойство аналогично свойству animation-timing-function, которое разбирается в части по анимациям. Свойство transition-timing-function определяет с какой скоростью и ускорением будут меняться свойства во время перехода.</p>
+    <p>В предыдущих примерах переходы происходили с одинаковой динамикой. Мы меняли длительность и задержку перехода, но не «форму». Эта «форма» по умолчанию соответствует первому графику, из которого видно, что переход начинается медленно, затем ускоряется и к концу движения опять замедляется.</p>
+    <p>Так ведёт себя значение ease свойства transition-timing-function.</p>
+    <div style="display: flex; justify-content: space-around;">
+    <p class="im"><img src="ease.png" alt=""></p>
+    <p class="im"><img src="linear.png" alt=""></p></div>
+    <p>Чтобы сделать переход равномерным, без ускорений и замедлений, используется значение linear. «Форма» линейного перехода приведена на втором графике.</p>
+   
+     <h2>Задачи</h2>
+   <ul>
+    <p>
+      <li>Квадратам .square задайте плавный переход для всех свойств длительностью 3s</li>
+    </p>
+    <p>
+      <li>а затем экспериментальному квадрату .square-experimental линейную форму перехода.</li>
+    </p>
+    <p>
+      <li>Нажимайте на кнопку .fab-play, чтобы переключать класс square-active для квадратов.</li>
+    </p>
+    </ul>
+    <h4>Было</h4>
+   <!-- <h4>object.svg</h4>
+     -->
+     
+     <!-- <button class="fab fab-play" type="button">&#58884;</button> -->
+     <div class="squares">
+      <div class="square"></div>
+      <div class="square"></div>
+     
+  </div>
+            <h4>Надо</h4>
+            <p>
+              <pre>
+                .square {
+                    left: 0;
+                    transition-duration: 3s;
+                  }
+                  
+                  .square-active {
+                    left: 75%;
+                    border-radius: 50%;
+                  }
+                  
+                  .square-experimental {
+                    transition-timing-function: linear;
+                  }
+                  
+                
+              </pre>  
+                
+                  
+            </p>
+            
+
+            
+            <h3>Код</h3><p><img src="50task.png" alt=""></p>
+            
+            <p><img src="51task.png" alt=""></p>
+            <p><img src="52task.png" alt=""></p>
+            <p><img src="53task.png" alt=""></p>
+   <div>
+        <a href="index.html">На главную</a>
+    </div>
+       </div>
+</body>
+</html>
